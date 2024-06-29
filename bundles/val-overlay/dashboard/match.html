@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <link rel="stylesheet" href="/bundles/val-overlay/dashboard/match.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+        <div id="snackbar"></div>
+        <div class="frow" style="justify-content: center; align-items: center">
+            <div class="fcolumn" style="border: none">
+                <div class="image-div" id="teamLogo1">
+                </div>
+            </div>
+            <div class="fcolumn" style="border: none">
+                <h1>Teams</h1>
+                <table>
+                    <tr>
+                        <td style="text-align: right">Team 1</td>
+                        <td>
+                            <div class="selectdiv">
+                                <select name="Team 1" id="team1" onchange="teamChange(1)">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align: right">Team 2</td>
+                        <td>
+                            <div class="selectdiv">
+                                <select name="Team 2" id="team2" onchange="teamChange(2)">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" style="text-align: center; width: 100%">
+                            <button class="button-remove" onclick="resetTeams()"><i class="fa fa-trash"></i> Reset</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="fcolumn" style="border: none">
+                <div class="image-div" id="teamLogo2">
+                </div>
+            </div>
+        </div>
+
+        <div class="frow">
+            <div id="score" class="fcolumn" style="flex-grow: 2; box-shadow: 0 8px 6px #000">
+                <h1>Score</h1>
+                <table>
+                    <tr>
+                        <td style="text-align: right">Best of</td>
+                        <td>
+                            <div class="bestOf">
+                                <label class="radio container" style="padding-right: 25px">
+                                  <input id="bestOfThree" type="radio" value="3" name="bestOf" onchange="changeBestOf(3)" checked="">
+                                  3
+                                  <span class="checkmark"></span>
+                                </label>
+                              </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align: right">Defender</td>
+                        <td>
+                            <div class="selectdiv">
+                                <select name="Defender" id="defender" onchange="changeDefender()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td>
+                            <div class="quantity">
+                                <input id="defenderScore" type="number" min="0" max="1" step="1" value="0" onchange="changeDefenderScore()">
+                                <div class="quantity-nav">
+                                    <button class="quantity-button quantity-up" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp();changeDefenderScore()"><b class="plus">+</b></button>
+                                    <button class="quantity-button quantity-down" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown();changeDefenderScore()"><b class="minus">-</b></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align: right">Attacker</td>
+                        <td>
+                            <div class="selectdiv">
+                                <select name="Attacker" id="attacker" onchange="changeAttacker()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td>
+                            <div class="quantity">
+                                <input id="attackerScore" type="number" min="0" max="1" step="1" value="0" onchange="changeAttackerScore()">
+                                <div class="quantity-nav">
+                                    <button class="quantity-button quantity-up" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp();changeAttackerScore()"><b class="plus">+</b></button>
+                                    <button class="quantity-button quantity-down" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown();changeAttackerScore()"><b class="minus">-</b></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="row">
+                    <button class="button-8" onclick="swapTeams()"><i class="fa fa-retweet"></i> Swap Teams</button>
+                    <button class="button-remove" style="margin-left: 20px" onclick="resetScore()"><i class="fa fa-trash"></i> Reset</button>
+                </div>
+            </div>
+
+            <div id="maps" class="fcolumn" style="flex-grow: 5; box-shadow: 0 8px 6px #000">
+                <h1>Maps</h1>
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Map</th>
+                        <th>Selected</th>
+                        <th>Map Over</th>
+                        <th>Team 1</th>
+                        <th>Score 1</th>
+                        <th>Score 2</th>
+                        <th>Team 2</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <div class="selectdiv">
+                                <select name="Map 1" id="map1" onchange="changeMap1()">
+                                    <option value=""></option>
+                                    <option value="Ascent">Ascent</option>
+                                    <option value="Bind">Bind</option>
+                                    <option value="Breeze">Breeze</option>
+                                    <option value="Icebox">Icebox</option>
+                                    <option value="Lotus">Lotus</option>
+                                    <option value="Split">Split</option>
+                                    <option value="Sunset">Sunset</option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td>
+                            <div class="selectdiv">
+                                <select name="Map 1 Select" id="map1Select" onchange="changeMap1Select()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td style="text-align: center; justify-content: center; height: 100%; padding: 0 35px"><input type="checkbox" name="Map 1 Over" id="map1Status" onchange="changeMap1Status()"></td>
+                        <td>
+                            <div class="selectdiv select-disabled">
+                                <select name="Map 1 Team 1" id="map1Team1" disabled="" onchange="changeMap1Team1()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td>
+                            <div class="quantity">
+                                <input id="map1Score1" type="number" min="0" step="1" value="0" disabled="" onchange="changeMap1Score1()">
+                                <div class="quantity-nav">
+                                    <button id="map1Score1Up" class="quantity-button quantity-up" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp();changeMap1Score1()"><b class="plus">+</b></button>
+                                    <button id="map1Score1Down" class="quantity-button quantity-down" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown();changeMap1Score1()"><b class="minus">-</b></button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="quantity">
+                                <input id="map1Score2" type="number" min="0" step="1" value="0" disabled="" onchange="changeMap1Score2()">
+                                <div class="quantity-nav">
+                                    <button id="map1Score2Up" class="quantity-button quantity-up" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp();changeMap1Score2()"><b class="plus">+</b></button>
+                                    <button id="map1Score2Down" class="quantity-button quantity-down" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown();changeMap1Score2()"><b class="minus">-</b></button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="selectdiv select-disabled">
+                                <select name="Map 1 Team 2" id="map1Team2" disabled="" onchange="changeMap1Team2()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <div class="selectdiv">
+                                <select name="Map 2" id="map2" onchange="changeMap2()">
+                                    <option value=""></option>
+                                    <option value="Ascent">Ascent</option>
+                                    <option value="Bind">Bind</option>
+                                    <option value="Breeze">Breeze</option>
+                                    <option value="Icebox">Icebox</option>
+                                    <option value="Lotus">Lotus</option>
+                                    <option value="Split">Split</option>
+                                    <option value="Sunset">Sunset</option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td>
+                            <div class="selectdiv">
+                                <select name="Map 2 Select" id="map2Select" onchange="changeMap2Select()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td style="text-align: center; justify-content: center; height: 100%; padding: 0 35px"><input type="checkbox" name="Map 2 Over" id="map2Status" onchange="changeMap2Status()"></td>
+                        <td>
+                            <div class="selectdiv select-disabled">
+                                <select name="Map 2 Team 1" id="map2Team1" disabled="" onchange="changeMap2Team1()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td>
+                            <div class="quantity">
+                                <input id="map2Score1" type="number" min="0" step="1" value="0" disabled="" onchange="changeMap2Score1()">
+                                <div class="quantity-nav">
+                                    <button id="map2Score1Up" class="quantity-button quantity-up" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp();changeMap2Score1()"><b class="plus">+</b></button>
+                                    <button id="map2Score1Down" class="quantity-button quantity-down" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown();changeMap2Score1()"><b class="minus">-</b></button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="quantity">
+                                <input id="map2Score2" type="number" min="0" step="1" value="0" disabled="" onchange="changeMap2Score2()">
+                                <div class="quantity-nav">
+                                    <button id="map2Score2Up" class="quantity-button quantity-up" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp();changeMap2Score2()"><b class="plus">+</b></button>
+                                    <button id="map2Score2Down" class="quantity-button quantity-down" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown();changeMap2Score2()"><b class="minus">-</b></button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="selectdiv select-disabled">
+                                <select name="Map 2 Team 2" id="map2Team2" disabled="" onchange="changeMap2Team2()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <div class="selectdiv">
+                                <select name="Map 3" id="map3" onchange="changeMap3()">
+                                    <option value=""></option>
+                                    <option value="Ascent">Ascent</option>
+                                    <option value="Bind">Bind</option>
+                                    <option value="Breeze">Breeze</option>
+                                    <option value="Icebox">Icebox</option>
+                                    <option value="Lotus">Lotus</option>
+                                    <option value="Split">Split</option>
+                                    <option value="Sunset">Sunset</option>
+                                </select>
+                            </div> 
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="row">
+                    <button class="button-remove" style="margin-bottom: 20px; margin-left: 20px" onclick="resetMaps()"><i class="fa fa-trash"></i> Reset</button>
+                </div>
+            </div>
+        </div>
+
+		<script src="/bundles/val-overlay/dashboard/match.js"></script>
+	</body>
+</html>

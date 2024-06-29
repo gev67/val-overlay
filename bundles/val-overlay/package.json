@@ -1,0 +1,112 @@
+{
+  "name": "val-overlay",
+  "version": "0.0.0",
+  "description": "An overlay editor for valorant.",
+  "homepage": "",
+  "author": {
+    "name": "Josias Feulner",
+    "email": "josiasfeulner67@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "valorant",
+    "overlay",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^2.0.0",
+    "dashboardPanels": [
+      {
+        "name": "Teams",
+        "title": "Teams",
+        "file": "teams.html",
+        "headerColor": "#525F78",
+        "fullbleed": true
+      },
+      {
+        "name": "Match",
+        "title": "Match",
+        "file": "match.html",
+        "headerColor": "#525F78",
+        "fullbleed": true
+      },
+      {
+        "name": "add-team",
+        "title": "Add a Team",
+        "width": 4,
+        "file": "addTeamDialog.html",
+        "headerColor": "#525F78",
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "save",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ]
+      }
+    ],
+    "graphics": [
+      {
+        "file": "overlay.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      }
+    ],
+    "assetCategories": [
+      {
+        "name": "overlayBackgrounds",
+        "title": "Overlay Backgrounds",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "gif",
+          "png"
+        ]
+      },
+      {
+        "name": "chatCovers",
+        "title": "Chat Covers",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "gif",
+          "png"
+        ]
+      },
+      {
+        "name": "teamLogos",
+        "title": "Logos",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "gif",
+          "png"
+        ]
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,75 @@
+td {
+    padding: 5px;
+  }
+  
+.flex {
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+}
+  
+.selectdiv {
+    min-width: 200px;
+    position: relative;
+}
+  
+select::-ms-expand {
+    display: none;
+}
+  
+.selectdiv:after {
+    content: "<>";
+    color: #333;
+    pointer-events: none;
+    background-color: #fff;
+    border-bottom: 1px solid #999;
+    padding: 0 0 2px;
+    font: 17px Consolas, monospace;
+    position: absolute;
+    top: 13px;
+    right: 11px;
+    transform: rotate(90deg);
+}
+  
+.select-disabled:after {
+    background-color: #0000 !important;
+}
+  
+.selectdiv select {
+    appearance: none;
+    color: #333;
+    float: right;
+    -ms-word-break: normal;
+    word-break: normal;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-bottom: .3rem solid #0000;
+    border-radius: .2rem;
+    width: 220px;
+    height: 39px;
+    margin: 5px 0;
+    padding: 0 5px;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    display: block;
+}
+  
+.selectdiv select:disabled {
+    border: 1px solid #ebebe4 !important;
+}
+  
+.form__input {
+    color: #333;
+    background-color: #fff;
+    border: none;
+    border-bottom: .3rem solid #0000;
+    border-radius: .2rem;
+    width: 200px;
+    margin: 0;
+    padding: 10px;
+    font-family: Roboto, sans-serif;
+    font-size: .8rem;
+    transition: all .3s;
+}

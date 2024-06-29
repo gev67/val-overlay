@@ -1,0 +1,108 @@
+@font-face {
+  font-family: GameChangers;
+  src: url("Replica-Bold.ttf");
+}
+
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  font-family: GameChangers, sans-serif;
+}
+
+.border {
+  border: 1px, solid, red;
+}
+
+.map {
+  color: #fff;
+  align-items: center;
+  padding: 0px;
+  font-size: 14px;
+  width: 155px;
+  height: 20px;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+}
+
+.image {
+  height: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.score {
+  color: #fff;
+  padding: 0;
+  position: absolute;
+}
+
+.team-name {
+  width: 315px;
+  font-size: 23px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.bestOf {
+  justify-content: center;
+  align-items: flex-start;
+  width: 1920px;
+  display: flex;
+  position: absolute;
+}
+
+.bestOfText {
+  color: #fff;
+  padding-top: 1px;
+  font-size: medium;
+}
+
+.bigImage {
+  height: 44px;
+  margin: 0;
+  padding-top: 3px;
+}
+
+.background-image {
+  background-image: url("MAP_OVERLAY_BLANK.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+.comp-box {
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  right: 0;
+  top: 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.score-box {
+  transform: rotate(45deg);
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px, solid, #e5ae15;
+  background-color: black;
+}
+
+.point {
+  transform: rotate(45deg);
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+}

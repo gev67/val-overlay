@@ -11,7 +11,7 @@ body {
 }
 
 .border {
-  border: 1px, solid, red;
+  border: 3px, solid, red;
 }
 
 .map {
@@ -90,13 +90,20 @@ body {
   text-align: center;
 }
 
-.score-box {
+.score-box-inner {
   transform: rotate(45deg);
   position: absolute;
   width: 10px;
   height: 10px;
-  border: 1px, solid, #e5ae15;
   background-color: black;
+}
+
+.score-box-outer {
+  transform: rotate(45deg);
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #e5ae15;
 }
 
 .point {

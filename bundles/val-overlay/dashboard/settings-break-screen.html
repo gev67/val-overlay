@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <link rel="stylesheet" href="/bundles/val-overlay/dashboard/settings.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+        <div class="fcolumn ">
+            <div id="current-match" class="fcolumn " style="padding-top: 10px" >
+                <b>Current Match</b>
+                <br>
+                <div class="frow">
+                    <div><img class="logo" id="team-one-logo" src="" alt=""></div>
+                    &nbsp;
+                    <div id="team-one-score">0</div>
+                    &nbsp;-&nbsp;
+                    <div id="team-two-score">0</div>
+                    &nbsp;
+                    <div><img class="logo" id="team-two-logo" src="" alt=""></div>
+                </div>
+            </div>
+            <div class="fcolumn " style="padding-top: 10px">
+                <div id="add-match-button">
+                    <button class="button-8 " nodecg-dialog="add-match" ><i class="fa fa-plus"></i> Add Match</button>
+                </div>
+                <div id="other-matches" class="frow" style="width: 90%; padding-top: 10px; justify-content: space-between;" hidden>
+                    <div><b>Type</b></div>
+                    <div><b>Score</b></div>
+                    <div><b>Delete</b></div>
+                </div>
+                <ul id="added-matches" class="ul-match ">
+                    
+                </ul>
+            </div>
+        </div>
+
+		<script src="/bundles/val-overlay/dashboard/settings-break-screen.js"></script>
+	</body>
+</html>

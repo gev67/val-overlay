@@ -37,10 +37,62 @@
         "fullbleed": true
       },
       {
+        "name": "Maps",
+        "title": "Maps",
+        "file": "settings-maps.html",
+        "headerColor": "#525F78",
+        "workspace": "Settings",
+        "width": 2
+      },
+      {
+        "name": "Break Screen",
+        "title": "Break Screen",
+        "file": "settings-break-screen.html",
+        "headerColor": "#525F78",
+        "workspace": "Settings",
+        "width": 2
+      },
+      {
         "name": "add-team",
         "title": "Add a Team",
         "width": 4,
         "file": "addTeamDialog.html",
+        "headerColor": "#525F78",
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "save",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ]
+      },
+      {
+        "name": "add-map",
+        "title": "Add a Map",
+        "width": 4,
+        "file": "addMapDialog.html",
+        "headerColor": "#525F78",
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "save",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ]
+      },
+      {
+        "name": "add-match",
+        "title": "Add a Match",
+        "width": 4,
+        "file": "addMatchDialog.html",
         "headerColor": "#525F78",
         "dialog": true,
         "dialogButtons": [
@@ -58,6 +110,12 @@
     "graphics": [
       {
         "file": "overlay.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "break.html",
         "width": 1920,
         "height": 1080,
         "singleInstance": false

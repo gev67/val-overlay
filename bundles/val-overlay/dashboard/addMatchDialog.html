@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <link rel="stylesheet" href="/bundles/val-overlay/dashboard/dialog.css">
+	</head>
+	<body>
+        <div class="flex">
+            <table>
+                <tr>
+                    <td style="text-align: right">Order</td>
+                    <td>
+                        <div class="selectdiv" style="float: left">
+                            <select name="Team Abbreviation" id="match-order">
+                                <option value=""></option>
+                                <option value="previous">Previous</option>
+                                <option value="next">Next</option>
+                            </select>
+                        </div> 
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right">Attacker Team</td>
+                    <td>
+                        <div class="selectdiv" style="float: left">
+                            <select name="Team Abbreviation" id="attacker-team">
+                                <option value=""></option>
+                            </select>
+                        </div> 
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right">Attacker Score</td>
+                    <td>
+                        <div class="quantity">
+                            <input id="attacker-score" type="number" min="0" step="1" value="0">
+                            <div class="quantity-nav">
+                                <button class="quantity-button quantity-up" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp()"><b class="plus">+</b></button>
+                                <button class="quantity-button quantity-down" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown()"><b class="minus">-</b></button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right">Defender Score</td>
+                    <td>
+                        <div class="quantity">
+                            <input id="defender-score" type="number" min="0" step="1" value="0">
+                            <div class="quantity-nav">
+                                <button class="quantity-button quantity-up" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp()"><b class="plus">+</b></button>
+                                <button class="quantity-button quantity-down" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown()"><b class="minus">-</b></button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right">Defender Team</td>
+                    <td>
+                        <div class="selectdiv" style="float: left">
+                            <select name="Team Abbreviation" id="defender-team">
+                                <option value=""></option>
+                            </select>
+                        </div> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <script src="/bundles/val-overlay/dashboard/addMatchDialog.js"></script>
+	</body>
+</html>

@@ -6,6 +6,7 @@ let teamLogosRepTeams = nodecg.Replicant("assets:teamLogos");
 let teamsRepTeamsInit = false;
 
 teamsRepTeams.on("change", (newValue) => {
+
     if (newValue == undefined) {
         teamsRepTeams.value = [];
         newValue = [];

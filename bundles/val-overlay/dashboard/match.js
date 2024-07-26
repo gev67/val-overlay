@@ -39,6 +39,7 @@ const map3 = document.getElementById("map3");
 
 let teamsRepMatch = nodecg.Replicant("teamsRep");
 let selectedTeamsRepMatch = nodecg.Replicant("selectedTeams");
+let settingsMapsRepMatch = nodecg.Replicant("settingsMapsRep");
 let selectedTeamsRepMatchValue;
 let scoreRepMatch = nodecg.Replicant("score");
 let mapsRepMatch = nodecg.Replicant("Maps");
@@ -144,7 +145,6 @@ mapsRepMatch.on("change", () => {
         }
 
         for (let i = 0; i < map1Select.options.length; i++){
-            nodecg.log.info("match", i);
             if (savedData.map1Select.teamName == map1Select.options[i].text) map1Select.selectedIndex = i;
             if (savedData.map1Team1.teamName == map1Team1.options[i].text) map1Team1.selectedIndex = i;
             if (savedData.map1Team2.teamName == map1Team2.options[i].text) map1Team2.selectedIndex = i;
@@ -340,6 +340,35 @@ selectedTeamsRepMatch.on("change", (newValue) => {
     }
 
     selectedTeamsRepMatchValue = selectedTeamsRepMatch.value;
+});
+
+settingsMapsRepMatch.on("change", () => {
+    let maps = settingsMapsRepMatch.value;
+    if (maps == undefined) maps = [];
+
+    let sortedMaps = maps.map((x) => x);
+    sortedMaps.sort();
+
+    let mapDropdowns = [map1, map2, map3];
+
+    for (let i = 0; i < mapDropdowns.length; i++) {
+        mapDropdowns[i].replaceChildren();
+        let emptyMapOption = document.createElement("option");
+        emptyMapOption.value = "";
+        emptyMapOption.innerHTML = "";
+        
+        mapDropdowns[i].appendChild(emptyMapOption);
+
+        for (let j = 0; j < sortedMaps.length; j++) {
+            let mapOption = document.createElement("option");
+            mapOption.value = sortedMaps[j];
+            mapOption.innerHTML = sortedMaps[j];
+            
+            mapDropdowns[i].appendChild(mapOption);
+        }
+
+        mapDropdowns[i].selectedIndex = 0;
+    }
 });
 
 function teamChange(num) {

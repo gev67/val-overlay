@@ -1,6 +1,16 @@
 @font-face {
-  font-family: GameChangers;
+  font-family: GameChangersGC;
   src: url("Replica-Bold.ttf");
+}
+
+@font-face {
+  font-family: GameChangers;
+  src: url("Gabarito-Bold.ttf");
+}
+
+@font-face {
+  font-family: GameChangersRegular;
+  src: url("Gabarito-Regular.ttf");
 }
 
 body {
@@ -8,6 +18,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: GameChangers, sans-serif;
+}
+
+.map-name {
+  font-family: GameChangersRegular, sans-serif;
 }
 
 .border {
@@ -57,6 +71,12 @@ body {
 .bestOfText {
   color: #fff;
   padding-top: 1px;
+  font-size: 15px;
+}
+
+.bestOfText-gc {
+  color: #fff;
+  padding-top: 1px;
   font-size: medium;
 }
 
@@ -78,6 +98,19 @@ body {
 }
 
 .comp-box {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  right: 0;
+  top: 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.comp-box-gc {
   display: flex;
   flex-direction: column;
   width: 330px;
@@ -103,7 +136,23 @@ body {
   position: absolute;
   width: 12px;
   height: 12px;
+  background-color: #9B6B9E;
+}
+
+.score-box-outer-gc {
+  transform: rotate(45deg);
+  position: absolute;
+  width: 12px;
+  height: 12px;
   background-color: #e5ae15;
+}
+
+.point-gc {
+  transform: rotate(45deg);
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #9B6B9E;
 }
 
 .point {

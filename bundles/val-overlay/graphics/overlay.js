@@ -22,19 +22,19 @@ mapsRepIndex.on("change", (newValue) => {
 
     switch(mapCount){
         case 0:
-            map1El.innerHTML = current + data.map1.toUpperCase() + "&nbsp;" + `<img src="${data.map1Select.logo}" class="image">`;
-            map2El.innerHTML = next + data.map2.toUpperCase() + "&nbsp;" + `<img src="${data.map2Select.logo}" class="image">`;
-            map3El.innerHTML = decider + data.map3.toUpperCase();
+            map1El.innerHTML = "<span class='map-name'>" + current + "</span>" + "&nbsp;" + data.map1.toUpperCase() + "&nbsp;" + `<img src="${data.map1Select.logo}" class="image">`;
+            map2El.innerHTML = "<span class='map-name'>" + next + "</span>" + "&nbsp;" + data.map2.toUpperCase() + "&nbsp;" + `<img src="${data.map2Select.logo}" class="image">`;
+            map3El.innerHTML = "<span class='map-name'>" + decider + "</span>" + "&nbsp;" + data.map3.toUpperCase();
             break;
         case 1:
-            map1El.innerHTML = data.map1.toUpperCase() + "&nbsp;" + `<img src="${data.map1Team1.logo}" class="image">` + "&nbsp;" + data.map1Score1 + "-" + data.map1Score2 + "&nbsp;" + `<img src="${data.map1Team2.logo}" class="image">`;
-            map2El.innerHTML = current + data.map2.toUpperCase() + "&nbsp;" + `<img src="${data.map2Select.logo}" class="image">`;
-            map3El.innerHTML = decider + data.map3.toUpperCase();
+            map1El.innerHTML = "<span class='map-name'>" + data.map1.toUpperCase() + "</span>" + "&nbsp;" + `<img src="${data.map1Team1.logo}" class="image">` + "&nbsp;" + data.map1Score1 + "-" + data.map1Score2 + "&nbsp;" + `<img src="${data.map1Team2.logo}" class="image">`;
+            map2El.innerHTML = "<span class='map-name'>" + current + "</span>" + "&nbsp;" + data.map2.toUpperCase() + "&nbsp;" + `<img src="${data.map2Select.logo}" class="image">`;
+            map3El.innerHTML = "<span class='map-name'>" + decider + "</span>" + "&nbsp;" + data.map3.toUpperCase();
             break;
         case 2:
-            map1El.innerHTML = data.map1.toUpperCase() + "&nbsp;" + `<img src="${data.map1Team1.logo}" class="image">` + "&nbsp;" + data.map1Score1 + "-" + data.map1Score2 + "&nbsp;" + `<img src="${data.map1Team2.logo}" class="image">`;
-            map2El.innerHTML = data.map2.toUpperCase() + "&nbsp;" + `<img src="${data.map2Team1.logo}" class="image">` + "&nbsp;" + data.map2Score1 + "-" + data.map2Score2 + "&nbsp;" + `<img src="${data.map2Team2.logo}" class="image">`;
-            map3El.innerHTML = current + data.map3.toUpperCase();
+            map1El.innerHTML = "<span class='map-name'>" + data.map1.toUpperCase() + "</span>" + "&nbsp;" + `<img src="${data.map1Team1.logo}" class="image">` + "&nbsp;" + data.map1Score1 + "-" + data.map1Score2 + "&nbsp;" + `<img src="${data.map1Team2.logo}" class="image">`;
+            map2El.innerHTML = "<span class='map-name'>" + data.map2.toUpperCase() + "</span>" + "&nbsp;" + `<img src="${data.map2Team1.logo}" class="image">` + "&nbsp;" + data.map2Score1 + "-" + data.map2Score2 + "&nbsp;" + `<img src="${data.map2Team2.logo}" class="image">`;
+            map3El.innerHTML = "<span class='map-name'>" + current + "</span>" + "&nbsp;" + data.map3.toUpperCase();
             break;
     }
 });

@@ -63,6 +63,11 @@
                                   3
                                   <span class="checkmark"></span>
                                 </label>
+                                <label class="radio container" style="padding-right: 25px">
+                                  <input id="bestOfFive" type="radio" value="5" name="bestOf" onchange="changeBestOf(5)" checked="">
+                                  5
+                                  <span class="checkmark"></span>
+                                </label>
                               </div>
                         </td>
                     </tr>
@@ -78,7 +83,7 @@
                         </td>
                         <td>
                             <div class="quantity">
-                                <input id="defenderScore" type="number" min="0" max="2" step="1" value="0" onchange="changeDefenderScore()">
+                                <input id="defenderScore" type="number" min="0" max="1" step="1" value="0" onchange="changeDefenderScore()">
                                 <div class="quantity-nav">
                                     <button class="quantity-button quantity-up" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp();changeDefenderScore()"><b class="plus">+</b></button>
                                     <button class="quantity-button quantity-down" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown();changeDefenderScore()"><b class="minus">-</b></button>
@@ -98,7 +103,7 @@
                         </td>
                         <td>
                             <div class="quantity">
-                                <input id="attackerScore" type="number" min="0" max="2" step="1" value="0" onchange="changeAttackerScore()">
+                                <input id="attackerScore" type="number" min="0" max="1" step="1" value="0" onchange="changeAttackerScore()">
                                 <div class="quantity-nav">
                                     <button class="quantity-button quantity-up" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp();changeAttackerScore()"><b class="plus">+</b></button>
                                     <button class="quantity-button quantity-down" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown();changeAttackerScore()"><b class="minus">-</b></button>
@@ -248,6 +253,122 @@
                         <td>
                             <div class="selectdiv">
                                 <select name="Map 3" id="map3" onchange="changeMap3()">
+                                    <option value=""></option>
+                                    <option value="Ascent">Ascent</option>
+                                    <option value="Bind">Bind</option>
+                                    <option value="Haven">Haven</option>
+                                    <option value="Icebox">Icebox</option>
+                                    <option value="Lotus">Lotus</option>
+                                    <option value="Split">Split</option>
+                                    <option value="Sunset">Sunset</option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td id="map3el1" hidden>
+                            <div class="selectdiv">
+                                <select name="Map 3 Select" id="map3Select" onchange="changeMap3Select()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td id="map3el2" hidden style="text-align: center; justify-content: center; height: 100%; padding: 0 35px"><input type="checkbox" name="Map 3 Over" id="map3Status" onchange="changeMap3Status()"></td>
+                        <td id="map3el3" hidden>
+                            <div class="selectdiv select-disabled">
+                                <select name="Map 3 Team 1" id="map3Team1" disabled="" onchange="changeMap3Team1()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td id="map3el4" hidden>
+                            <div class="quantity">
+                                <input id="map3Score1" type="number" min="0" step="1" value="0" disabled="" onchange="changeMap3Score1()">
+                                <div class="quantity-nav">
+                                    <button id="map3Score1Up" class="quantity-button quantity-up" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp();changeMap3Score1()"><b class="plus">+</b></button>
+                                    <button id="map3Score1Down" class="quantity-button quantity-down" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown();changeMap3Score1()"><b class="minus">-</b></button>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="map3el5" hidden>
+                            <div class="quantity">
+                                <input id="map3Score2" type="number" min="0" step="1" value="0" disabled="" onchange="changeMap3Score2()">
+                                <div class="quantity-nav">
+                                    <button id="map3Score2Up" class="quantity-button quantity-up" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp();changeMap3Score2()"><b class="plus">+</b></button>
+                                    <button id="map3Score2Down" class="quantity-button quantity-down" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown();changeMap3Score2()"><b class="minus">-</b></button>
+                                </div>
+                            </div>
+                        </td>
+                        <td id="map3el6" hidden>
+                            <div class="selectdiv select-disabled">
+                                <select name="Map 3 Team 2" id="map3Team2" disabled="" onchange="changeMap3Team2()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                    </tr>
+
+                    <tr id="map4row" hidden>
+                        <td>4</td>
+                        <td>
+                            <div class="selectdiv">
+                                <select name="Map 4" id="map4" onchange="changeMap4()">
+                                    <option value=""></option>
+                                    <option value="Ascent">Ascent</option>
+                                    <option value="Bind">Bind</option>
+                                    <option value="Haven">Haven</option>
+                                    <option value="Icebox">Icebox</option>
+                                    <option value="Lotus">Lotus</option>
+                                    <option value="Split">Split</option>
+                                    <option value="Sunset">Sunset</option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td>
+                            <div class="selectdiv">
+                                <select name="Map 4 Select" id="map4Select" onchange="changeMap4Select()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td style="text-align: center; justify-content: center; height: 100%; padding: 0 35px"><input type="checkbox" name="Map 4 Over" id="map4Status" onchange="changeMap4Status()"></td>
+                        <td>
+                            <div class="selectdiv select-disabled">
+                                <select name="Map 4 Team 1" id="map4Team1" disabled="" onchange="changeMap4Team1()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                        <td>
+                            <div class="quantity">
+                                <input id="map4Score1" type="number" min="0" step="1" value="0" disabled="" onchange="changeMap4Score1()">
+                                <div class="quantity-nav">
+                                    <button id="map4Score1Up" class="quantity-button quantity-up" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp();changeMap4Score1()"><b class="plus">+</b></button>
+                                    <button id="map4Score1Down" class="quantity-button quantity-down" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown();changeMap4Score1()"><b class="minus">-</b></button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="quantity">
+                                <input id="map4Score2" type="number" min="0" step="1" value="0" disabled="" onchange="changeMap4Score2()">
+                                <div class="quantity-nav">
+                                    <button id="map4Score2Up" class="quantity-button quantity-up" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp();changeMap4Score2()"><b class="plus">+</b></button>
+                                    <button id="map4Score2Down" class="quantity-button quantity-down" disabled="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepDown();changeMap4Score2()"><b class="minus">-</b></button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="selectdiv select-disabled">
+                                <select name="Map 4 Team 2" id="map4Team2" disabled="" onchange="changeMap4Team2()">
+                                    <option></option>
+                                </select>
+                            </div> 
+                        </td>
+                    </tr>
+
+                    <tr id="map5row" hidden>
+                        <td>5</td>
+                        <td>
+                            <div class="selectdiv">
+                                <select name="Map 5" id="map5" onchange="changeMap5()">
                                     <option value=""></option>
                                     <option value="Ascent">Ascent</option>
                                     <option value="Bind">Bind</option>

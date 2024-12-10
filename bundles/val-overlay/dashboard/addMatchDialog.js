@@ -12,8 +12,8 @@ document.addEventListener("dialog-opened", function() {
     if (!teams) teams = [];
     let teamsTemp = []
 
-    attackerScore.replaceChildren(new Option("", ""));
-    defenderScore.replaceChildren(new Option("", ""));
+    attackerTeam.replaceChildren(new Option("", ""));
+    defenderTeam.replaceChildren(new Option("", ""));
 
     for (var i = 0; i < teams.length; i++) {
         inserted = false;

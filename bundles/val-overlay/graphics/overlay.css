@@ -32,7 +32,7 @@ body {
   color: #fff;
   align-items: center;
   padding: 0px;
-  font-size: 14px;
+  font-size: 13.5px;
   width: 155px;
   height: 20px;
   display: flex;
@@ -131,7 +131,7 @@ body {
   background-color: black;
 }
 
-.score-box-outer {
+.score-box-outer-ww {
   transform: rotate(45deg);
   position: absolute;
   width: 12px;
@@ -139,7 +139,7 @@ body {
   background-color: #9B6B9E;
 }
 
-.score-box-outer-gc {
+.score-box-outer {
   transform: rotate(45deg);
   position: absolute;
   width: 12px;
@@ -147,7 +147,7 @@ body {
   background-color: #e5ae15;
 }
 
-.point-gc {
+.point-ww {
   transform: rotate(45deg);
   position: absolute;
   width: 8px;

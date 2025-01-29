@@ -47,10 +47,10 @@ settingsMatchesRep.on("change", () => {
         }
 
         for (let i = 0; i < matches.length; i++) {
-            if (matches[i].matchOrder == "previous") addMatch(matches[i], i);
+            if (matches[i].matchOrder == "match results") addMatch(matches[i], i);
         }
         for (let i = 0; i < matches.length; i++) {
-            if (matches[i].matchOrder == "next") addMatch(matches[i], i+5);
+            if (matches[i].matchOrder == "upcoming") addMatch(matches[i], i+5);
         }
     } else {
         otherMatches.hidden = true;
@@ -72,8 +72,12 @@ function addMatch(match, i) {
 
     typediv.style.width = "50px";
     buttondiv.style.width = "50px";
-    
-    typediv.innerHTML = match.matchOrder.substring(0,1).toUpperCase() + match.matchOrder.substring(1,4);
+
+    if (match.matchOrder == "match results") {
+        typediv.innerHTML = "Prev";
+    } else if (match.matchOrder == "upcoming") {
+        typediv.innerHTML = "Next";
+    }
 
     let attackerLogodiv = document.createElement("div");
     let attackerLog = document.createElement("img");

@@ -26,7 +26,7 @@ function updateMatches() {
     if (breakMatchesRep.value != undefined) {
         let otherMatches = breakMatchesRep.value;
         for (let i = 0; i < otherMatches.length; i++) {
-            if (otherMatches[i].matchOrder == "previous") {
+            if (otherMatches[i].matchOrder == "match results") {
                 let score = otherMatches[i].attackerScore + " - " + otherMatches[i].defenderScore;
                 addMatch(otherMatches[i].matchOrder.toUpperCase(), otherMatches[i].attackerLogo, otherMatches[i].defenderLogo, score);
             }
@@ -44,7 +44,7 @@ function updateMatches() {
     if (breakMatchesRep.value != undefined) {
         let otherMatches = breakMatchesRep.value;
         for (let i = 0; i < otherMatches.length; i++) {
-            if (otherMatches[i].matchOrder == "next") {
+            if (otherMatches[i].matchOrder == "upcoming") {
                 addMatch(otherMatches[i].matchOrder.toUpperCase(), otherMatches[i].attackerLogo, otherMatches[i].defenderLogo);
             }
         }

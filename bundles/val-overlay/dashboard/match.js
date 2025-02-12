@@ -81,10 +81,8 @@ let scoreRepInit = false;
 let mapsRepInit = false;
 
 scoreRepMatch.on("change", () => {
+    let savedData = scoreRepMatch.value;
     if (!scoreRepInit) {
-        let savedData = scoreRepMatch.value;
-
-        nodecg.log.info(scoreRepMatch.value.bestOf);
 
         if (scoreRepMatch.value.bestOf == 3) {
             bestOfFive.checked = false;
@@ -118,6 +116,33 @@ scoreRepMatch.on("change", () => {
             map5row.hidden = false;
         }
 
+        NodeCG.waitForReplicants(selectedTeamsRepMatch).then(() => {
+            for (var i = 0; i < defender.length; i++) {
+                if (defender[i].innerHTML === savedData.defender.teamName) {
+                    defender.selectedIndex = i;
+                    break;
+                }
+            }
+    
+            if (savedData.defenderScore != "") defenderScore.value = savedData.defenderScore;
+            
+            for (var i = 0; i < attacker.length; i++) {
+                if (attacker[i].innerHTML === savedData.attacker.teamName) {
+                    attacker.selectedIndex = i;
+                    break;
+                }
+            }
+    
+            if (savedData.attackerScore != "") attackerScore.value = savedData.attackerScore;
+        });
+        
+        scoreRepInit = true;
+    } else {
+        defenderScore.value = scoreRepMatch.value.defenderScore ? scoreRepMatch.value.defenderScore : 0;
+        attackerScore.value = scoreRepMatch.value.attackerScore ? scoreRepMatch.value.attackerScore : 0;
+    }
+
+    NodeCG.waitForReplicants(selectedTeamsRepMatch).then(() => {
         for (var i = 0; i < defender.length; i++) {
             if (defender[i].innerHTML === savedData.defender.teamName) {
                 defender.selectedIndex = i;
@@ -135,11 +160,7 @@ scoreRepMatch.on("change", () => {
         }
 
         if (savedData.attackerScore != "") attackerScore.value = savedData.attackerScore;
-        scoreRepInit = true;
-    } else {
-        defenderScore.value = scoreRepMatch.value.defenderScore ? scoreRepMatch.value.defenderScore : 0;
-        attackerScore.value = scoreRepMatch.value.attackerScore ? scoreRepMatch.value.attackerScore : 0;
-    }
+    });
 });
 
 mapsRepMatch.on("change", () => {
@@ -408,12 +429,17 @@ teamsRepMatch.on("change", (newValue) => {
 });
 
 selectedTeamsRepMatch.on("change", (newValue) => {
+    resetMaps();
+
     let data = newValue;
     let team1 = data[0];
     let team2 = data[1];
 
+    if (team1.teamName == "") dropdown1.selectedIndex = 0;
+    if (team2.teamName == "") dropdown2.selectedIndex = 0;
+
     for (var i = 0; i < dropdown1.length; i++) {
-        if (dropdown1[i].innerHTML === team1.teamName && dropdown1.value === "") {
+        if (dropdown1[i].innerHTML === team1.teamName) {
             dropdown1.selectedIndex = i;
             teamLogo1.replaceChildren();
 
@@ -432,7 +458,7 @@ selectedTeamsRepMatch.on("change", (newValue) => {
             teamLogo1.appendChild(logodiv);
         }
 
-        if (dropdown2[i].innerHTML === team2.teamName && dropdown2.value === "") {
+        if (dropdown2[i].innerHTML === team2.teamName) {
             dropdown2.selectedIndex = i;
             teamLogo2.replaceChildren();
 
@@ -661,7 +687,6 @@ function resetTeams() {
 }
 
 function changeBestOf(bestOf) {
-    nodecg.log.info("Changed bestOf to:", bestOf);
     let data = scoreRepMatch.value;
     data.bestOf = String(bestOf);
     data.defenderScore = 0;
@@ -791,7 +816,6 @@ function resetScore(bestOf = 3) {
 
 function changeMap1() {
     let data = mapsRepMatch.value;
-    nodecg.log.info(mapsRepMatch.value);
     data.map1 = map1.value;
 
     if (map1.value === map2.value || map1.value === map3.value) toast("You have selected the same map twice!");

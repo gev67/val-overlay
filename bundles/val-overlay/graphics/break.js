@@ -68,11 +68,19 @@ function addMatch(matchType, attackerLogo, defenderLogo, score = "") {
     defenderLogoEl.className = "logo";
     scoreEl.className = "score";
 
-    typeEl.innerHTML = matchType.toUpperCase();
-    attackerLogoEl.src = attackerLogo;
-    vs.innerHTML = "VS";
-    defenderLogoEl.src = defenderLogo;
-    scoreEl.innerHTML = score;
+    if (attackerLogo > defenderLogo) {
+        typeEl.innerHTML = matchType.toUpperCase();
+        attackerLogoEl.src = defenderLogo;
+        vs.innerHTML = "VS";
+        defenderLogoEl.src = attackerLogo;
+        scoreEl.innerHTML = score.split("").reverse().join("");
+    } else {
+        typeEl.innerHTML = matchType.toUpperCase();
+        attackerLogoEl.src = attackerLogo;
+        vs.innerHTML = "VS";
+        defenderLogoEl.src = defenderLogo;
+        scoreEl.innerHTML = score;
+    }
 
     logosDiv.appendChild(attackerLogoEl);
     logosDiv.appendChild(vs);

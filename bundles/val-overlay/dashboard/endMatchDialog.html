@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <link rel="stylesheet" href="/bundles/val-overlay/dashboard/dialog.css">
+	</head>
+	<body>
+        <div class="flex">
+            <table>
+                <tr>
+                    Ending the match will remove it from the "Current Match" section of the break screen, and add it to the "Previous Matches" section with the current score. <br> <br>
+                    Selecting a next match will additionally make the selected match the "Current Match" and remove it from the "Upcoming Matches"
+                </tr>
+                <tr>
+                    <td style="text-align: right">Next Match</td>
+                    <td>
+                        <div class="selectdiv" style="float: left; width: 350px;">
+                            <select name="Match Name" id="next-match" style="width: 350px;">
+                                <option value=""></option>
+                            </select>
+                        </div> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="snackbar"></div>
+
+        <script src="/bundles/val-overlay/dashboard/endMatchDialog.js"></script>
+	</body>
+</html>

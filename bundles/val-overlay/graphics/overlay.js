@@ -108,6 +108,13 @@ scoreRepIndex.on("change", (newValue) => {
     let defenderScore = data.defenderScore;
     let attackerScore = data.attackerScore;
 
+    defenderScore1.hidden = true;
+    defenderScore2.hidden = true;
+    defenderScore3.hidden = true;
+    attackerScore1.hidden = true;
+    attackerScore2.hidden = true;
+    attackerScore3.hidden = true;
+    
     switch (defenderScore) {
         case "0":
             defenderScore1.hidden = true;

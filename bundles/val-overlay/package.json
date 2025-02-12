@@ -105,6 +105,24 @@
             "type": "dismiss"
           }
         ]
+      },
+      {
+        "name": "end-match",
+        "title": "End Match",
+        "width": 4,
+        "file": "endMatchDialog.html",
+        "headerColor": "#525F78",
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "end match",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ]
       }
     ],
     "graphics": [

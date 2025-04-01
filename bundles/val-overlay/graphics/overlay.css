@@ -5,15 +5,16 @@
 
 @font-face {
   font-family: GameChangers;
-  src: url("Gabarito-Bold.ttf");
+  src: url("MonaSans-SemiBold.ttf");
 }
 
 @font-face {
   font-family: GameChangersRegular;
-  src: url("Gabarito-Regular.ttf");
+  src: url("MonaSans-Regular.ttf");
 }
 
 body {
+  color: #fff;
   background-color: #000;
   margin: 0;
   padding: 0;
@@ -22,18 +23,26 @@ body {
 
 .map-name {
   font-family: GameChangersRegular, sans-serif;
+  color: #c8c8c8;
+}
+
+.current-map {
+  color: #fff;
+}
+
+.not-current-map {
+  color: #c8c8c8;
 }
 
 .border {
-  border: 3px, solid, red;
+  border: 1px, solid, red;
 }
 
 .map {
-  color: #fff;
   align-items: center;
   padding: 0px;
   font-size: 13.5px;
-  width: 155px;
+  width: 200px;
   height: 20px;
   display: flex;
   position: absolute;
@@ -87,7 +96,6 @@ body {
 }
 
 .background-image {
-  background-image: url("MAP_OVERLAY_BLANK.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

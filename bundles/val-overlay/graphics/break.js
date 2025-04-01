@@ -69,13 +69,13 @@ function addMatch(matchType, attackerLogo, defenderLogo, score = "") {
     scoreEl.className = "score";
 
     if (attackerLogo > defenderLogo) {
-        typeEl.innerHTML = matchType.toUpperCase();
+        //typeEl.innerHTML = matchType.toUpperCase();
         attackerLogoEl.src = defenderLogo;
         vs.innerHTML = "VS";
         defenderLogoEl.src = attackerLogo;
         scoreEl.innerHTML = score.split("").reverse().join("");
     } else {
-        typeEl.innerHTML = matchType.toUpperCase();
+        //typeEl.innerHTML = matchType.toUpperCase();
         attackerLogoEl.src = attackerLogo;
         vs.innerHTML = "VS";
         defenderLogoEl.src = defenderLogo;

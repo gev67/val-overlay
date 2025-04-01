@@ -1,13 +1,13 @@
 @font-face {
     font-family: GameChangers;
-    src: url("Gabarito-Bold.ttf");
+    src: url("CooperHewitt-Semibold.ttf");
   }
 
 body {
     padding: 0;
     margin: 0;
     font-family: GameChangers, sans-serif;
-    background-image: url("break-background.png");
+    background-color: gray;
     color: white;
 }
 
@@ -27,7 +27,6 @@ body {
 }
 
 .match-div {
-    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,8 +52,8 @@ body {
 }
 
 .logo {
-    max-width: 135px;
-    max-height: 135px;
+    max-width: 125px;
+    max-height: 125px;
 }
 
 .vs {
@@ -62,7 +61,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
+    width: 100px;
     height: 30px;
 }
 

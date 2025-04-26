@@ -20,6 +20,9 @@ const attackerScore1 = document.getElementById("attacker-score-1");
 const attackerScore2 = document.getElementById("attacker-score-2");
 const attackerScore3 = document.getElementById("attacker-score-3");
 
+const timeoutOverlay = document.getElementById("timeout");
+const techOverlay = document.getElementById("techPause");
+
 const current = "CURRENT: ";
 const next = "NEXT: ";
 const decider = "DECIDER: ";
@@ -81,6 +84,7 @@ mapsRepIndex.on("change", (newValue) => {
 });
 
 const scoreRepIndex = nodecg.Replicant("score");
+
 scoreRepIndex.on("change", (newValue) => {
     nodecg.log.info('overlay', newValue);
     let data = newValue;
@@ -160,4 +164,18 @@ scoreRepIndex.on("change", (newValue) => {
             attackerScore3.hidden = false;
             break;
     }
+});
+
+let pauseRepIndex = nodecg.Replicant("pauseRep");
+
+pauseRepIndex.on("change", () => {
+    let data = pauseRepIndex.value;
+    nodecg.log.info(data);
+    if (data == undefined) {
+        data = {};
+        data.timeoutStatus = false;
+        data.techStatus = false;
+    }
+    timeoutOverlay.hidden = !data.timeoutStatus;
+    techOverlay.hidden = !data.techStatus;
 });

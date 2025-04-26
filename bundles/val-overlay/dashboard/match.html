@@ -111,8 +111,27 @@
                             </div>
                         </td>
                     </tr>
+
+                    <tr>
+                        <td style="text-align: right">
+                            Timeout
+                        </td>
+                        <td>
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 20%; float:left">
+                                    <input type="checkbox" name="Timeout" id="timeoutStatus" onchange="changePauseStatus()">
+                                </div>
+                                <div style="width: 80%; float:right; text-align: right; padding-right: 5px;">
+                                    Tech Pause
+                                </div>
+                            </div>
+                        </td>
+                        <td style="text-align: left; justify-content: left; height: 100%; padding: 0">
+                            <input type="checkbox" name="Tech Pause" id="techStatus" onchange="changePauseStatus()">
+                        </td>
+                    </tr>
                 </table>
-                <div style="width: 100%">
+                <div style="width: 100%; padding-top: 10px;">
                     <div class="button-row">
                         <button class="button-8" style="margin-left: 20px" onclick="swapTeams()"><i class="fa fa-retweet"></i> Swap Teams</button>
                         <button class="button-remove" style="margin-left: 20px" onclick="resetScore()"><i class="fa fa-trash"></i> Reset</button>

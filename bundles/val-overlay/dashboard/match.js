@@ -70,12 +70,16 @@ const map4Team2 = document.getElementById("map4Team2");
 const map5row = document.getElementById("map5row");
 const map5 = document.getElementById("map5");
 
+const timeoutStatus = document.getElementById("timeoutStatus");
+const techStatus = document.getElementById("techStatus");
+
 let teamsRepMatch = nodecg.Replicant("teamsRep");
 let selectedTeamsRepMatch = nodecg.Replicant("selectedTeams");
 let settingsMapsRepMatch = nodecg.Replicant("settingsMapsRep");
 let selectedTeamsRepMatchValue;
 let scoreRepMatch = nodecg.Replicant("score");
 let mapsRepMatch = nodecg.Replicant("Maps");
+let pausesRepMatch = nodecg.Replicant("pauseRep");
 
 let scoreRepInit = false;
 let mapsRepInit = false;
@@ -589,6 +593,18 @@ settingsMapsRepMatch.on("change", () => {
     }
 });
 
+pausesRepMatch.on("change", () => {
+    let data = pausesRepMatch.value;
+    nodecg.log.info(data);
+    if (data == undefined) {
+        data = {};
+        data.timeoutStatus = false;
+        data.techStatus = false;
+    }
+    timeoutStatus.checked = data.timeoutStatus;
+    techStatus.checked = data.techStatus;
+});
+
 function teamChange(num) {
     let data = [
         {
@@ -658,6 +674,7 @@ function teamChange(num) {
 
     resetScore();
     resetMaps();
+    resetPauseStatus();
 
     if (dropdown1.selectedIndex === dropdown2.selectedIndex) toast("You have selected the same map twice!");
     selectedTeamsRepMatch.value = data;
@@ -666,6 +683,7 @@ function teamChange(num) {
 function resetTeams() {
     resetScore();
     resetMaps();
+    resetPauseStatus();
     let data = [
         {
             teamName: "",
@@ -723,7 +741,8 @@ function changeBestOf(bestOf) {
     scoreRepMatch.value = data;
 
     resetScore(bestOf);
-    resetMaps()
+    resetMaps();
+    resetPauseStatus();
 }
 
 function changeDefender() {
@@ -812,6 +831,8 @@ function resetScore(bestOf = 3) {
 
     scoreRepInit = false;
     scoreRepMatch.value = data;
+
+    resetPauseStatus();
 }
 
 function changeMap1() {
@@ -1236,7 +1257,32 @@ function resetMaps() {
     map2Score2Down.disabled = true;
     mapsRepInit = false;
     mapsRepMatch.value = data;
+
+    resetPauseStatus();
 }
+
+function changePauseStatus() {
+    let data = pausesRepMatch.value;
+    nodecg.log.info(data);
+    if (data == undefined) {
+        data = {};
+        data.timeoutStatus = false;
+        data.techStatus = false;
+    }
+    data.timeoutStatus = timeoutStatus.checked;
+    data.techStatus = techStatus.checked;
+    pausesRepMatch.value = data;
+}
+
+function resetPauseStatus() {
+    let data = pausesRepMatch.value;
+    if (data !== undefined) {
+        data.timeoutStatus = false;
+        data.techStatus = false;
+        pausesRepMatch.value = data;
+    }
+}
+
 function toast(text) {
     nodecg.log.info("Showing toast");
     var toast = document.getElementById("snackbar");

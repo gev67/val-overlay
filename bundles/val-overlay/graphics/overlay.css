@@ -20,6 +20,28 @@ body {
   font-family: GameChangers, sans-serif;
 }
 
+.timeout {
+  background-image: url("Timeout.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+.techPause {
+  background-image: url("Tech_Pause.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
 .map-name {
   font-family: GameChangersRegular, sans-serif;
 }

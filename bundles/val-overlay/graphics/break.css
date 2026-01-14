@@ -1,6 +1,6 @@
 @font-face {
     font-family: GameChangers;
-    src: url("Gabarito-Bold.ttf");
+    src: url("FoundryGridnik-ExtraBold.ttf");
   }
 
 body {
@@ -20,7 +20,7 @@ body {
     width: 30%;
     height: 80%;
     top: 10%;
-    right: 8%;
+    right: 15%;
     flex-direction: column;
     justify-content: center;
     display: flex;
